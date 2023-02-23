@@ -5,6 +5,7 @@ import { Server } from "@hapi/hapi";
 import helloRoutes from "./routes/helloRoutes";
 import logger from "./utils/logger";
 export let server: Server;
+// starting server
 export const init = async function (): Promise<Server> {
   server = Hapi.server({
     port: process.env.PORT || 4000,
