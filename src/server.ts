@@ -4,6 +4,8 @@ import * as Hapi from "@hapi/hapi";
 import { Server } from "@hapi/hapi";
 import helloRoutes from "./routes/helloRoutes";
 import logger from "./utils/logger";
+import calculatorRoutes from "./routes/calculatorRoutes";
+
 export let server: Server;
 // starting server
 export const init = async function (): Promise<Server> {
@@ -11,7 +13,7 @@ export const init = async function (): Promise<Server> {
     port: process.env.PORT || 4000,
     host: "0.0.0.0",
   });
-  await server.register([helloRoutes]);
+  await server.register([helloRoutes, calculatorRoutes]);
 
   return server;
 };
