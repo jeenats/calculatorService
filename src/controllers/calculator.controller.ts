@@ -7,10 +7,21 @@ import logger from "../utils/logger";
  */
 export class CalculatorController {
   constructor() {}
-  public async sayHello(request: Hapi.Request, h: Hapi.ResponseToolkit) {
+  public async add(request: Hapi.Request, h: Hapi.ResponseToolkit) {
     try {
       logger.info("Welcome to the calculator controller!");
-      return h.response("Hello !!!.");
+
+      return h.response("I am from addition !!!.");
+    } catch (error) {
+      logger.error(error);
+      return Boom.badImplementation(JSON.stringify(error));
+    }
+  }
+  public async substract(request: Hapi.Request, h: Hapi.ResponseToolkit) {
+    try {
+      logger.info("Welcome to the calculator controller!");
+
+      return h.response("I am from substraction !!!.");
     } catch (error) {
       logger.error(error);
       return Boom.badImplementation(JSON.stringify(error));

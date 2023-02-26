@@ -11,7 +11,15 @@ const calcultaorRoutes = {
       {
         method: "GET",
         path: "/calculator/add",
-        handler: calculatorController.sayHello,
+        handler: calculatorController.add,
+        options: {
+          tags: ["api"],
+        },
+      },
+      {
+        method: "GET",
+        path: "/calculator/substract",
+        handler: calculatorController.substract,
         options: {
           tags: ["api"],
         },
