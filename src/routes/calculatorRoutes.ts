@@ -24,6 +24,14 @@ const calcultaorRoutes = {
           tags: ["api"],
         },
       },
+      {
+        method: "POST",
+        path: "/calculator/multify",
+        handler: calculatorController.multify,
+        options: {
+          tags: ["api"],
+        },
+      },
     ]);
   },
 };
