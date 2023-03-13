@@ -27,4 +27,15 @@ export class CalculatorController {
       return Boom.badImplementation(JSON.stringify(error));
     }
   }
+  public async multify(request: Hapi.Request, h: Hapi.ResponseToolkit) {
+    try {
+      const { a, b }: any = request.payload;
+      logger.info("paylod", a);
+
+      return h.response(String(a * b));
+    } catch (error) {
+      logger.error(error);
+      return Boom.badImplementation(JSON.stringify(error));
+    }
+  }
 }
